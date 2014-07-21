@@ -36,11 +36,10 @@ var BABYLON;
             var pickInfo = this.intersects(ray);
 
             if (pickInfo.hit) {
-                var result = BABYLON.Vector3.TransformCoordinates(pickInfo.pickedPoint, this.getWorldMatrix());
-                return result.y;
+                return pickInfo.pickedPoint.y;
             }
 
-            return 0;
+            return;
         };
         return GroundMesh;
     })(BABYLON.Mesh);
